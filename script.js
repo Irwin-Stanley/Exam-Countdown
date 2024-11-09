@@ -1,40 +1,35 @@
-function startCountdown() {
-  const targetDate = new Date('2025-02-14T00:00:00').getTime();
-  const timerElement = document.getElementById('countdown-timer');
+// Set the target date for the countdown (February 14, 2024)
+let countdownDate = new Date("Feb 14, 2024 00:00:00").getTime();
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const timeRemaining = targetDate - now;
+// Get the countdown element and fluid animation
+let countdownElement = document.getElementById("countdown-text");
+let fluid = document.getElementById("fluid");
 
-    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-    timerElement.textContent = `${days} days left`;
+// Update the countdown text and fluid animation
+function updateCountdown() {
+  let now = new Date().getTime();
+  let distance = countdownDate - now;
 
-    if (timeRemaining <= 0) {
-      clearInterval(countdownInterval);
-      timerElement.textContent = 'Time’s up!';
-    }
+  // Calculate days left
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  // Update the countdown text
+  countdownElement.innerText = days + " Days";
+
+  // Update fluid level based on remaining days (fluid will drop slightly each day)
+  let fluidHeight = (days / 365) * 100; // Adjust this based on your design
+  fluid.style.height = fluidHeight + "%";
+
+  // Stop the countdown if it reaches zero
+  if (distance < 0) {
+    clearInterval(interval);
+    countdownElement.innerText = "Event Day!";
+    fluid.style.height = "100%";  // Keep the fluid at full height when event day is reached
   }
-
-  const countdownInterval = setInterval(updateCountdown, 1000);
 }
 
-function loadQuotes() {
-  const quotes = [
-    "Believe you can and you're halfway there.",
-    "Every moment is a fresh beginning.",
-    "The future belongs to those who believe in the beauty of their dreams.",
-    "Keep your face always toward the sunshine—and shadows will fall behind you.",
-  ];
+// Call the function once to set the initial countdown
+updateCountdown();
 
-  const leftQuote = document.getElementById('quote-left');
-  const rightQuote = document.getElementById('quote-right-text');
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-
-  leftQuote.textContent = randomQuote;
-  rightQuote.textContent = randomQuote;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  startCountdown();
-  loadQuotes();
-});
+// Update the countdown every 24 hours (86400000 ms)
+let interval = setInterval(updateCountdown, 86400000);
