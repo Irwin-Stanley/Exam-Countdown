@@ -39,16 +39,16 @@ h1 {
 }
 
 .countdown {
-  font-size: 3em;
+  font-size: 1.5em; /* Smaller text */
   font-weight: bold;
   color: #e74c3c;
   position: relative;
   display: inline-block;
   background: linear-gradient(to bottom, #fff, #e74c3c);
-  border-radius: 50% 50% 0 0; /* Makes the top rounded */
-  width: 200px;
-  height: 150px; /* Adjusted for bowl shape */
-  line-height: 120px;
+  border-radius: 50% 50% 0 0;
+  width: 400px; /* Larger bowl */
+  height: 300px; /* Larger bowl */
+  line-height: 200px; /* Center text vertically */
   text-align: center;
   overflow: hidden;
 }
@@ -56,13 +56,13 @@ h1 {
 .countdown:after {
   content: "";
   display: block;
-  height: 40px;
+  height: 50px;
   background: #e74c3c;
   position: absolute;
-  bottom: -20px;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60px;
+  width: 80px;
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
