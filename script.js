@@ -14,7 +14,7 @@ function updateCountdown() {
   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
   // Update the countdown text
-  countdownElement.innerText = days + " Days";
+  countdownElement.innerText = days + " days left for board exam";
 
   // Update fluid level based on remaining days (fluid will drop slightly each day)
   let fluidHeight = (days / 365) * 100; // Adjust this based on your design
