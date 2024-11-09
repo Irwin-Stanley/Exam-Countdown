@@ -1,4 +1,3 @@
-// Countdown Timer until February 14
 function startCountdown() {
   const targetDate = new Date('2025-02-14T00:00:00').getTime();
   const timerElement = document.getElementById('countdown-timer');
@@ -19,7 +18,6 @@ function startCountdown() {
   const countdownInterval = setInterval(updateCountdown, 1000);
 }
 
-// Quotes that change daily or on reload
 function loadQuotes() {
   const quotes = [
     "Believe you can and you're halfway there.",
