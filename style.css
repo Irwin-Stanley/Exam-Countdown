@@ -43,28 +43,36 @@ h1 {
   font-weight: bold;
   color: #e74c3c;
   position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #fff, #e74c3c);
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  text-align: center;
 }
 
 .countdown:after {
   content: "";
   display: block;
-  height: 200px;
-  background: linear-gradient(to bottom, #e74c3c, #fff);
-  width: 100px;
+  height: 50px;
+  background: #e74c3c;
   position: absolute;
-  bottom: -50px;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 50%;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  width: 60px;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Quote Section */
 .quote-section {
   display: flex;
-  justify-content: space-around;
-  width: 80%;
+  justify-content: space-between;
+  width: 90%;
   margin-top: 30px;
+  gap: 10%;
 }
 
 .quote-box {
@@ -74,6 +82,15 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.left-box p, .right-box p {
+  font-size: 1.2em;
+}
+
+#notice {
+  font-weight: bold;
+}
+
 
 .left-box p, .right-box p {
   font-size: 1.2em;
