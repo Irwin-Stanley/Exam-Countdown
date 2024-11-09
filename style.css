@@ -45,20 +45,21 @@ h1 {
   position: relative;
   display: inline-block;
   background: linear-gradient(to bottom, #fff, #e74c3c);
-  border-radius: 50%;
+  border-radius: 50% 50% 0 0; /* Makes the top rounded */
   width: 200px;
-  height: 200px;
-  line-height: 200px;
+  height: 150px; /* Adjusted for bowl shape */
+  line-height: 120px;
   text-align: center;
+  overflow: hidden;
 }
 
 .countdown:after {
   content: "";
   display: block;
-  height: 50px;
+  height: 40px;
   background: #e74c3c;
   position: absolute;
-  bottom: -25px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
   width: 60px;
